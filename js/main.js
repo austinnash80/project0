@@ -213,9 +213,23 @@ let gameEnd = function () {
       winner = "X";
       endMessage();
       $("body").addClass("gameWinner");
-        if (+(topL) + +(topM) + +(topR) === 3) {
-          $("#1text").addClass("fas fa-check-square")
-          $("#1text").text("f14a")
+        if (+(topL) + +(topM) + +(topR) === 3) { // Change the X,O to Checks after they win
+          $("#1text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#2text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#3text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+
+        }if (+(midL) + +(midM) + +(midR) === 3) {
+          $("#4text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#5text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#6text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+
+        } if (+(bottomL) + +(bottomM) + +(bottomR) === 3) {
+          $("#7text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#8text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#9text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+
+        }else {
+
         }
 
     }else if (+(topL) + +(topM) + +(topR) === 12 || +(midL) + +(midM) + +(midR) === 12 || +(bottomL) + +(bottomM) + +(bottomR) === 12){
@@ -223,6 +237,24 @@ let gameEnd = function () {
       winner = "O";
       endMessage();
       $("body").addClass("gameWinner");
+        if (+(topL) + +(topM) + +(topR) === 12) { // Change the X,O to Checks after they win
+          $("#1text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#2text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#3text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+
+        }if (+(midL) + +(midM) + +(midR) === 12) {
+          $("#4text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#5text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#6text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+
+        } if (+(bottomL) + +(bottomM) + +(bottomR) === 12) {
+          $("#7text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#8text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#9text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+
+        }else {
+
+        }
 
 // Verticle Wins
 
@@ -231,12 +263,48 @@ let gameEnd = function () {
       winner = "X";
       endMessage();
       $("body").addClass("gameWinner");
+        if (+(topL) + +(midL) + +(bottomL) === 3) { // Change the X,O to Checks after they win
+          $("#1text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#4text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#7text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+
+        }if (+(topM) + +(midM) + +(bottomM) === 3) {
+          $("#2text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#5text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#8text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+
+        } if (+(topR) + +(midR) + +(bottomR) === 3) {
+          $("#3text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#6text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#9text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+
+        }else {
+
+        }
 
     }else if (+(topL) + +(midL) + +(bottomL) === 12 || +(topM) + +(midM) + +(bottomM) === 12 || +(topR) + +(midR) + +(bottomR) === 12) {
       console.log("Player O has won");
       winner = "O";
       endMessage();
       $("body").addClass("gameWinner");
+        if (+(topL) + +(midL) + +(bottomL) === 12) { // Change the X,O to Checks after they win
+          $("#1text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#4text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#7text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+
+        }if (+(topM) + +(midM) + +(bottomM) === 12) {
+          $("#2text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#5text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#8text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+
+        } if (+(topR) + +(midR) + +(bottomR) === 12) {
+          $("#3text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#6text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#9text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+
+        }else {
+
+        }
 
   // Across Wins
 
@@ -245,12 +313,38 @@ let gameEnd = function () {
       winner = "X";
       endMessage();
       $("body").addClass("gameWinner");
+        if (+(topL) + +(midM) + +(bottomR) === 3) { // Change the X,O to Checks after they win
+          $("#1text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#5text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#9text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+
+        }if (+(topR) + +(midM) + +(bottomL) === 3) {
+          $("#3text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#5text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#7text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+
+        }else {
+
+        }
 
     } else if (+(topL) + +(midM) + +(bottomR) === 12 || +(topR) + +(midM) + +(bottomL) === 12) {
       console.log("Player O has won");
       winner = "O";
-      endMessage();
+      endMessage(); // Top Statement of the winner
       $("body").addClass("gameWinner");
+        if (+(topL) + +(midM) + +(bottomR) === 12) { // Change the X,O to Checks after they win
+          $("#1text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#5text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#9text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+
+        }if (+(topR) + +(midM) + +(bottomL) === 12) {
+          $("#3text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#5text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+          $("#7text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+
+        }else {
+
+        }
 
 // Tie Game
 
@@ -285,15 +379,15 @@ let gameEnd = function () {
 
   let clear = $("button").click(function () {
     // Clear the X's and O's text
-    $("#1text").removeClass("animate bounceIn");
-    $("#2text").removeClass("animate bounceIn");
-    $("#3text").removeClass("animate bounceIn");
-    $("#4text").removeClass("animate bounceIn");
-    $("#5text").removeClass("animate bounceIn");
-    $("#6text").removeClass("animate bounceIn");
-    $("#7text").removeClass("animate bounceIn");
-    $("#8text").removeClass("animate bounceIn");
-    $("#9text").removeClass("animate bounceIn");
+    $("#1text").removeClass("animate bounceIn fa fa-check-circle");
+    $("#2text").removeClass("animate bounceIn fa fa-check-circle");
+    $("#3text").removeClass("animate bounceIn fa fa-check-circle");
+    $("#4text").removeClass("animate bounceIn fa fa-check-circle");
+    $("#5text").removeClass("animate bounceIn fa fa-check-circle");
+    $("#6text").removeClass("animate bounceIn fa fa-check-circle");
+    $("#7text").removeClass("animate bounceIn fa fa-check-circle");
+    $("#8text").removeClass("animate bounceIn fa fa-check-circle");
+    $("#9text").removeClass("animate bounceIn fa fa-check-circle");
     $(".box").text(""); //fade this out
     topL = 0
     topM = 0
