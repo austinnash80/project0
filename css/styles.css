@@ -1,0 +1,39 @@
+* {
+  background-color: red;
+
+}
+
+.gameWinner {
+  background-color: green;
+}
+
+button {
+  margin: 15px;
+  padding: 10px;
+  color: white;
+  background-color: blue;
+}
+
+.container {
+  padding: 20px
+
+}
+
+.box {
+  border: 2px solid #000;
+  width: 55px;
+  height: 55px;
+  display:inline-block;
+  text-align: center;
+
+
+}
+.board {
+  text-align: center
+  line-height: 35px;
+}
+
+/* .xo {
+  text-align: center;
+  line-height: 35px;
+} */
