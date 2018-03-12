@@ -13,9 +13,24 @@ $(document).ready(function(){
 
 let clicks = 0;
 
+// let clicksHover = 0
+// $(".box").addClass("x");
+//
+// let hover = $(".box").click(function () {
+//     if (clicksHover === 0 || clicksHover === 2) {
+//     $(".box").addClass("x");
+//     clicksHover++
+//   } if (clicksHover === 1 || clicksHover === 3) {
+//     $(".box").removeClass("x")
+//     $(".box").addClass("o");
+//     clicksHover++
+//   }
+// })
 
 
-let topL = $("#1").click(function() {
+let topL = $("#1text").click(function() {
+  $("#1text").addClass("animate bounceIn");
+
                   if (clicks === 0 ) {
                     $("#1text").text("X");
                     console.log("X");
@@ -23,6 +38,7 @@ let topL = $("#1").click(function() {
                     topL = 1
                     console.log(topL);
                     gameEnd();
+                    // $("#1text").addClass("animate bounceIn");
                   }else {
                     $("#1text").text("O")
                     console.log("O");
@@ -31,10 +47,13 @@ let topL = $("#1").click(function() {
                     console.log(topL);
                     gameEnd();
                   }
+
                 })
 
 
-let topM = $("#2").click(function() {
+let topM = $("#2text").click(function() {
+  $("#2text").addClass("animate bounceIn");
+
                   if (clicks === 0 ) {
                     $("#2text").text("X");
                     console.log("x");
@@ -52,7 +71,9 @@ let topM = $("#2").click(function() {
                   }
                 })
 
-let topR = $("#3").click(function() {
+let topR = $("#3text").click(function() {
+  $("#3text").addClass("animate bounceIn");
+
                   if (clicks === 0 ) {
                     $("#3text").text("X");
                     console.log("x");
@@ -70,7 +91,9 @@ let topR = $("#3").click(function() {
                   }
                 })
 
-let midL = $("#4").click(function() {
+let midL = $("#4text").click(function() {
+  $("#4text").addClass("animate bounceIn");
+
                   if (clicks === 0 ) {
                     $("#4text").text("X");
                     console.log("x");
@@ -87,7 +110,9 @@ let midL = $("#4").click(function() {
                     gameEnd();
                   }
                 })
-let midM = $("#5").click(function() {
+let midM = $("#5text").click(function() {
+  $("#5text").addClass("animate bounceIn");
+
                   if (clicks === 0 ) {
                     $("#5text").text("X");
                     console.log("x");
@@ -104,7 +129,9 @@ let midM = $("#5").click(function() {
                     gameEnd();
                   }
                 })
-let midR = $("#6").click(function() {
+let midR = $("#6text").click(function() {
+  $("#6text").addClass("animate bounceIn");
+
                   if (clicks === 0 ) {
                     $("#6text").text("X");
                     console.log("x");
@@ -121,7 +148,9 @@ let midR = $("#6").click(function() {
                     gameEnd();
                   }
                 })
-let bottomL = $("#7").click(function() {
+let bottomL = $("#7text").click(function() {
+  $("#7text").addClass("animate bounceIn");
+
                   if (clicks === 0 ) {
                     $("#7text").text("X");
                     console.log("x");
@@ -138,7 +167,9 @@ let bottomL = $("#7").click(function() {
                     gameEnd();
                   }
                 })
-let bottomM = $("#8").click(function() {
+let bottomM = $("#8text").click(function() {
+  $("#8text").addClass("animate bounceIn");
+
                   if (clicks === 0 ) {
                     $("#8text").text("X");
                     console.log("x");
@@ -155,7 +186,9 @@ let bottomM = $("#8").click(function() {
                     gameEnd();
                   }
                 })
-let bottomR = $("#9").click(function() {
+let bottomR = $("#9text").click(function() {
+  $("#9text").addClass("animate bounceIn");
+
                   if (clicks === 0 ) {
                     $("#9text").text("X");
                     console.log("x");
@@ -175,121 +208,125 @@ let bottomR = $("#9").click(function() {
 
 let gameEnd = function () {
   // Horizonal Wins
-    if (+(topL) + +(topM) + +(topR) === 3) {
+    if (+(topL) + +(topM) + +(topR) === 3 || +(midL) + +(midM) + +(midR) === 3 || +(bottomL) + +(bottomM) + +(bottomR) === 3) {
       console.log("Player X has won");
-      // alert ("Player X has won")
-      $(".winner").text("Player X has won, click reset to play again");
+      winner = "X";
+      endMessage();
       $("body").addClass("gameWinner");
+        if (+(topL) + +(topM) + +(topR) === 3) {
+          $("#1text").addClass("fas fa-check-square")
+          $("#1text").text("f14a")
+        }
 
-    }if (+(midL) + +(midM) + +(midR) === 3) {
-      console.log("Player X has won");
-      $(".winner").text("Player X has won, click reset to play again")
-
-    }if (+(bottomL) + +(bottomM) + +(bottomR) === 3) {
-      console.log("Player X has won");
-      $(".winner").text("Player X has won, click reset to play again")
-
-    }if (+(topL) + +(topM) + +(topR) === 12) {
+    }else if (+(topL) + +(topM) + +(topR) === 12 || +(midL) + +(midM) + +(midR) === 12 || +(bottomL) + +(bottomM) + +(bottomR) === 12){
       console.log("Player O has won");
-      $(".winner").text("Player O has won, click reset to play again")
-
-    }if (+(midL) + +(midM) + +(midR) === 12) {
-      console.log("Player O has won");
-      $(".winner").text("Player O has won, click reset to play again")
-
-    }if (+(bottomL) + +(bottomM) + +(bottomR) === 12) {
-      console.log("Player O has won");
-      $(".winner").text("Player O has won, click reset to play again")
+      winner = "O";
+      endMessage();
+      $("body").addClass("gameWinner");
 
 // Verticle Wins
 
-    }if (+(topL) + +(midL) + +(bottomL) === 3) {
+    }else if (+(topL) + +(midL) + +(bottomL) === 3 || +(topM) + +(midM) + +(bottomM) === 3 || +(topR) + +(midR) + +(bottomR) === 3) {
       console.log("Player X has won");
-      $(".winner").text("Player X has won, click reset to play again")
+      winner = "X";
+      endMessage();
+      $("body").addClass("gameWinner");
 
-    }if (+(topM) + +(midM) + +(bottomM) === 3) {
-      console.log("Player X has won");
-      $(".winner").text("Player X has won, click reset to play again")
-
-    }if (+(topR) + +(midR) + +(bottomR) === 3) {
-      console.log("Player X has won");
-      $(".winner").text("Player X has won, click reset to play again")
-
-    }if (+(topL) + +(midL) + +(bottomL) === 12) {
+    }else if (+(topL) + +(midL) + +(bottomL) === 12 || +(topM) + +(midM) + +(bottomM) === 12 || +(topR) + +(midR) + +(bottomR) === 12) {
       console.log("Player O has won");
-      $(".winner").text("Player O has won, click reset to play again")
-
-    }if (+(topM) + +(midM) + +(bottomM) === 12) {
-      console.log("Player O has won");
-      $(".winner").text("Player O has won, click reset to play again")
-
-    }if (+(topR) + +(midR) + +(bottomR) === 12) {
-      console.log("Player O has won");
-      $(".winner").text("Player O has won, click reset to play again")
+      winner = "O";
+      endMessage();
+      $("body").addClass("gameWinner");
 
   // Across Wins
 
-        }if (+(topL) + +(midM) + +(bottomR) === 3) {
-          console.log("Player X has won");
-          $(".winner").text("Player X has won, click reset to play again")
+    }else if (+(topL) + +(midM) + +(bottomR) === 3 || +(topR) + +(midM) + +(bottomL) === 3) {
+      console.log("Player X has won");
+      winner = "X";
+      endMessage();
+      $("body").addClass("gameWinner");
 
-        }if (+(topR) + +(midM) + +(bottomL) === 3) {
-          console.log("Player X has won");
-          $(".winner").text("Player X has won, click reset to play again")
-
-        }if (+(topL) + +(midM) + +(bottomR) === 12) {
-          console.log("Player O has won");
-          $(".winner").text("Player O has won, click reset to play again")
-
-        }if (+(topR) + +(midM) + +(bottomL) === 12) {
-          console.log("Player O has won");
-          $(".winner").text("Player O has won, click reset to play again")
+    } else if (+(topL) + +(midM) + +(bottomR) === 12 || +(topR) + +(midM) + +(bottomL) === 12) {
+      console.log("Player O has won");
+      winner = "O";
+      endMessage();
+      $("body").addClass("gameWinner");
 
 // Tie Game
 
-      } if (+(topL) + +(topM) + +(topR) +
-        +(midL) + +(midM) + +(midR) +
-        +(bottomL) + +(bottomM) + +(bottomR) === 21) {
+      } else if (+(topL) + +(topM) + +(topR) + +(midL) + +(midM) + +(midR) + +(bottomL) + +(bottomM) + +(bottomR) === 21) {
         console.log("Tie, Play again");
-        $(".winner").text("Tie, Play again")
-
+        winner = "T"
+        $("body").addClass("gameTie");
+        console.log(winner);
         }else {
-          console.log("keep Playing");
+        console.log("keep Playing");
         }
 
-      console.log("here", +(topR));
-      console.log("hereL", +(topL));
-      console.log("hereL", +(topL) + +(topR) + +(topM));
 }
 
+// Display a message when the game is over
+
+  let endMessage = function () {
+        if (winner === "X") {
+          $(".winner").text(`Player X has won, click reset to play again`);
+          $(".box").removeClass("animated shake")
+      } else if (winner === "O") {
+          $(".winner").text(`Player O has won, click reset to play again`);
+          $(".box").removeClass("animated shake")
+      } else if (winner === "T") {
+          $(".winner").text(`Tie Game, Play again`);
+          $(".box").removeClass("animated shake")
+      }
+
+  };
+
+// reset button
+
+  let clear = $("button").click(function () {
+    // Clear the X's and O's text
+    $("#1text").removeClass("animate bounceIn");
+    $("#2text").removeClass("animate bounceIn");
+    $("#3text").removeClass("animate bounceIn");
+    $("#4text").removeClass("animate bounceIn");
+    $("#5text").removeClass("animate bounceIn");
+    $("#6text").removeClass("animate bounceIn");
+    $("#7text").removeClass("animate bounceIn");
+    $("#8text").removeClass("animate bounceIn");
+    $("#9text").removeClass("animate bounceIn");
+    $(".box").text(""); //fade this out
+    topL = 0
+    topM = 0
+    topR = 0
+    midL = 0
+    midM = 0
+    midR = 0
+    bottomL = 0
+    bottomM = 0
+    bottomR = 0
+
+    clicks = 0
+    $(".winner").text("");
+    $("body").removeClass("gameWinner");
+    $("body").removeClass("gameTie");
+
+    $(".box").addClass("animated shake") // only works the first time - need to remove the class and re-add
 
 
-let clear = $("button").click(function () {
-  $("#1text").text("");
-  topL = 0
-  $("#2text").text("");
-  topM = 0
-  $("#3text").text("");
-  topR = 0
+  })
 
-  $("#4text").text("");
-  midL = 0
-  $("#5text").text("");
-  midM = 0
-  $("#6text").text("");
-  midR = 0
+// if x turn hover red if O turn hover green
 
-  $("#7text").text("");
-  bottomL = 0
-  $("#8text").text("");
-  bottomM = 0
-  $("#9text").text("");
-  bottomR = 0
+// let hover = function () {
+//   if (clicks === 0) {
+//     $(".box").addClass("x");
+//   } if (clicks === 1) {
+//     $(".box").removeClass("x")
+//     $(".box").addClass("o");
+//   }
+// }
+//
+// hover();
 
-  clicks = 0
-
-  $(".winner").text("");
-
-})
 
 }) // end of doc ready
