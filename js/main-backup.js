@@ -28,50 +28,11 @@ let clicks = 0;
 // })
 
 
-// let the user change/pick there object there
-  //make the X/O text in a variable and the user change
-
-// let playerX = "D"
-
-
-// $("#player1").click(function() {
-//   $("#player1").addOnClick("changePlayerX")
-// })
-
-
-
-  changePlayerX = function (){
-    let player = "X"
-    let playerX = prompt ("Player 1: Select the first letter of your name", "Enter One Letter Only")
-        if (playerX.length === 1) {
-        console.log(playerX);
-        changePlayerX = playerX
-        console.log(changePlayerX);
-        console.log(playerX.length);
-      }else {
-        changePlayerX = "X"
-      }
-  };
-
-  changePlayerO = function () {
-    let player = "O";
-    let playerO = prompt ("Player 2: Select the first letter of your name", "Enter One Letter Only")
-      if (playerO.length === 1) {
-        changePlayerO = playerO
-      }else {
-        changePlayerO = "O"
-      }
-  };
-
-  resetPlayers = function (){
-    location.reload();
-  }
-
 let topL = $("#1text").click(function() {
   $("#1text").addClass("animate bounceIn");
 
                   if (clicks === 0 ) {
-                    $("#1text").text(changePlayerX);
+                    $("#1text").text("X");
                     console.log("X");
                     clicks++
                     topL = 1
@@ -79,7 +40,7 @@ let topL = $("#1text").click(function() {
                     gameEnd();
                     // $("#1text").addClass("animate bounceIn");
                   }else {
-                    $("#1text").text(changePlayerO);
+                    $("#1text").text("O")
                     console.log("O");
                     clicks--
                     topL = 4
@@ -94,14 +55,14 @@ let topM = $("#2text").click(function() {
   $("#2text").addClass("animate bounceIn");
 
                   if (clicks === 0 ) {
-                    $("#2text").text(changePlayerX);
+                    $("#2text").text("X");
                     console.log("x");
                     clicks++
                     topM = 1
                     console.log(topM);
                     gameEnd();
                   }else {
-                    $("#2text").text(changePlayerO)
+                    $("#2text").text("O")
                     console.log("O");
                     clicks--
                     topM = 4
@@ -114,14 +75,14 @@ let topR = $("#3text").click(function() {
   $("#3text").addClass("animate bounceIn");
 
                   if (clicks === 0 ) {
-                    $("#3text").text(changePlayerX);
+                    $("#3text").text("X");
                     console.log("x");
                     clicks++
                     topR = 1
                     console.log(topR);
                     gameEnd();
                   }else {
-                    $("#3text").text(changePlayerO)
+                    $("#3text").text("O")
                     console.log("O");
                     clicks--
                     topR = 4
@@ -134,14 +95,14 @@ let midL = $("#4text").click(function() {
   $("#4text").addClass("animate bounceIn");
 
                   if (clicks === 0 ) {
-                    $("#4text").text(changePlayerX);
+                    $("#4text").text("X");
                     console.log("x");
                     clicks++
                     midL = 1
                     console.log(midL);
                     gameEnd();
                   }else {
-                    $("#4text").text(changePlayerO)
+                    $("#4text").text("O")
                     console.log("O");
                     clicks--
                     midL = 4
@@ -153,14 +114,14 @@ let midM = $("#5text").click(function() {
   $("#5text").addClass("animate bounceIn");
 
                   if (clicks === 0 ) {
-                    $("#5text").text(changePlayerX);
+                    $("#5text").text("X");
                     console.log("x");
                     clicks++
                     midM = 1
                     console.log(midM);
                     gameEnd();
                   }else {
-                    $("#5text").text(changePlayerO)
+                    $("#5text").text("O")
                     console.log("O");
                     clicks--
                     midM = 4
@@ -172,14 +133,14 @@ let midR = $("#6text").click(function() {
   $("#6text").addClass("animate bounceIn");
 
                   if (clicks === 0 ) {
-                    $("#6text").text(changePlayerX);
+                    $("#6text").text("X");
                     console.log("x");
                     clicks++
                     midR = 1
                     console.log(midR);
                     gameEnd();
                   }else {
-                    $("#6text").text(changePlayerO)
+                    $("#6text").text("O")
                     console.log("O");
                     clicks--
                     midR = 4
@@ -191,14 +152,14 @@ let bottomL = $("#7text").click(function() {
   $("#7text").addClass("animate bounceIn");
 
                   if (clicks === 0 ) {
-                    $("#7text").text(changePlayerX);
+                    $("#7text").text("X");
                     console.log("x");
                     clicks++
                     bottomL = 1
                     console.log(bottomL);
                     gameEnd();
                   }else {
-                    $("#7text").text(changePlayerO)
+                    $("#7text").text("O")
                     console.log("O");
                     clicks--
                     bottomL = 4
@@ -210,14 +171,14 @@ let bottomM = $("#8text").click(function() {
   $("#8text").addClass("animate bounceIn");
 
                   if (clicks === 0 ) {
-                    $("#8text").text(changePlayerX);
+                    $("#8text").text("X");
                     console.log("x");
                     clicks++
                     bottomM = 1
                     console.log(bottomM);
                     gameEnd();
                   }else {
-                    $("#8text").text(changePlayerO)
+                    $("#8text").text("O")
                     console.log("O");
                     clicks--
                     bottomM = 4
@@ -229,14 +190,14 @@ let bottomR = $("#9text").click(function() {
   $("#9text").addClass("animate bounceIn");
 
                   if (clicks === 0 ) {
-                    $("#9text").text(changePlayerX);
+                    $("#9text").text("X");
                     console.log("x");
                     clicks++
                     bottomR = 1
                     console.log(bottomR);
                     gameEnd();
                   }else {
-                    $("#9text").text(changePlayerO)
+                    $("#9text").text("O")
                     console.log("O");
                     clicks--
                     bottomR = 4
@@ -402,10 +363,10 @@ let gameEnd = function () {
 
   let endMessage = function () {
         if (winner === "X") {
-          $(".winner").text(`Player ${changePlayerX} has won, click reset to play again`);
+          $(".winner").text(`Player X has won, click reset to play again`);
           $(".box").removeClass("animated shake")
       } else if (winner === "O") {
-          $(".winner").text(`Player ${changePlayerO} has won, click reset to play again`);
+          $(".winner").text(`Player O has won, click reset to play again`);
           $(".box").removeClass("animated shake")
       } else if (winner === "T") {
           $(".winner").text(`Tie Game, Play again`);
@@ -416,7 +377,7 @@ let gameEnd = function () {
 
 // reset button
 
-  let clear = $(".reset").click(function () {
+  let clear = $("button").click(function () {
     // Clear the X's and O's text
     $("#1text").removeClass("animate bounceIn fa fa-check-circle");
     $("#2text").removeClass("animate bounceIn fa fa-check-circle");
@@ -442,6 +403,7 @@ let gameEnd = function () {
     $(".winner").text("");
     $("body").removeClass("gameWinner");
     $("body").removeClass("gameTie");
+
     $(".box").addClass("animated shake") // only works the first time - need to remove the class and re-add
 
 

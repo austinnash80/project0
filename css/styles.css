@@ -2,12 +2,16 @@
 @import url('https://fonts.googleapis.com/css?family=Kalam:700');
 
 body {
-  background-color: grey;
+  background-color: #B9C6AE;
 
 }
 
+.pickPlayer {
+  margin-left: 60px;
+}
+
 .gameWinner {
-  background-color: green;
+  background-color: #8A95A5;
 }
 
 .gameTie {
@@ -40,6 +44,7 @@ button {
   padding: 0;
   overflow: hidden;
   font-family: 'Kalam', cursive;
+  background-color: #8A95A5;
 
 }
 
@@ -58,20 +63,24 @@ h1 {
 } */
 
 .box:hover {
-  background-color: green;
+  background-color: #474056;
+  opacity: .5;
 }
-.o:hover {
-  background-color: green;
-}
+
 
 .grid {
   margin-left: 35px;
 }
 
 .reset {
-  margin-left: 80px;
+  margin-left: 115px;
 }
 
 .winner {
-  margin-left: 15px;
+  margin-left: 5px;
+}
+
+.pageReload {
+  text-decoration: underline;
+  padding-left: 50px;
 }

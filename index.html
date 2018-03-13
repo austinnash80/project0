@@ -13,8 +13,10 @@
   </head>
   <body>
     <h1 class="">Tic Tac Toe - Project 0</h1>
-      <div>
-      <h3 class="winner"></h3>
+      <div class="pickPlayer">
+        <button class="player1" type="button" onclick="changePlayerX()" >Pick Player 1</button>
+        <button class="player2" type="button" onclick="changePlayerO()" >Pick Player 2</button>
+        <div class="pageReload" onclick="resetPlayers()">Click To Reset Players</div>
       </div>
 
       <div class="container">
@@ -37,10 +39,13 @@
               <div class="box" id="9text"></div>
             </div>
           </table>
-          <div>
-            <button class="reset" type="button">Reset Game</button>
-          </div>
+        </div>
 
+        <div>
+        <h3 class="winner"></h3>
+        </div>
+        <div>
+          <button class="reset" type="button">Reset Game</button>
         </div>
 
       </div>
