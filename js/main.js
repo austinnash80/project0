@@ -399,21 +399,42 @@ let gameEnd = function () {
 }
 
 // Display a message when the game is over
+  let xWin = 0
+  let oWin = 0
 
   let endMessage = function () {
         if (winner === "X") {
+          xWin++
           $(".winner").text(`Player ${changePlayerX} has won, click reset to play again`);
           $(".box").removeClass("animated shake")
-      } else if (winner === "O") {
+          $("#scorePlayer1").text(xWin);
+      } if (winner === "O") {
+          oWin++
           $(".winner").text(`Player ${changePlayerO} has won, click reset to play again`);
           $(".box").removeClass("animated shake")
-      } else if (winner === "T") {
+          $("#scorePlayer2").text(oWin);
+      } if (winner === "T") {
           $(".winner").text(`Tie Game, Play again`);
           $(".box").removeClass("animated shake")
+      } else {
+
       }
 
   };
 
+// let score = function () {
+//   if (winner === "X") {
+//       xWin++
+//       $(".scorePlayer1").text(xWin);
+//
+//   }if (winner === "O") {
+//       oWin++
+//       $(".scorePlayer2").text(xWin);
+//
+//   }else {
+//
+//   }
+// }
 // reset button
 
   let clear = $(".reset").click(function () {
@@ -447,18 +468,7 @@ let gameEnd = function () {
 
   })
 
-// if x turn hover red if O turn hover green
 
-// let hover = function () {
-//   if (clicks === 0) {
-//     $(".box").addClass("x");
-//   } if (clicks === 1) {
-//     $(".box").removeClass("x")
-//     $(".box").addClass("o");
-//   }
-// }
-//
-// hover();
 
 
 }) // end of doc ready
