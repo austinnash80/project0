@@ -7,6 +7,10 @@ If you decide to play a custom game, enter the names and symbol of choice for ea
 
 If you do not want to enter player names select the 'quick play' game and you can begin with Player 1 using 'X' and Player 2 using 'O'.
 
+To reset the board select the 'Rest Game' button
+
+To reset the score and select new player click the 'Reset Players' button
+ 
 #### Prerequisites
 Nothing needs to be installed or downloaded to play.
 

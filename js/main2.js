@@ -3,206 +3,181 @@ console.log("working?");
 $(document).ready(function(){
   console.log("ready")
 
+let clicks = 0;         //start click counter at 0 - palyer one will start
 
-let clicks = 0;
+let objectP1 = "";      // Empty global variable to be filled for user input of playing mark (X) - player1
 
-let objectP1 = "";
+let objectP2 = "";      // Empty global variable to be filled for user input of playing mark (X) - player2
 
-let objectP2 = "";
+let name1 = "";         // Empty global variable - user inoput for player name 1 - use this variable later
 
-let name1 = "";
+let name2 = "";         // Empty global variable - user inoput for player name 1 - use this variable later
 
-let name2 = "";
-
-custom = function (){
-    name1 = $("#numb1").val()
-    $("#player1Name").text(`${name1} Score: `)
-    console.log(name1);
-    name2 = $("#numb3").val()
-    $("#player2Name").text(`   ${name2} Score: `)
-
-    objectP1 = $("#numb2").val()
-    console.log(objectP1);
-    objectP2 = $("#numb4").val()
-    // let objectP2 = $("#numb4").val()
-
+custom = function (){                             //run fuction when 'custom play' button is clicked
+    name1 = $("#numb1").val()                     //take the user value typed into the first name box - assign it to name1 variable
+    $("#player1Name").text(`${name1} Score: `)    //add user input for player1 + Score: for the scoreboard text (h3)
+    name2 = $("#numb3").val()                     //take the user value typed into the second name box - assign it to name2 variable
+    $("#player2Name").text(`${name2} Score: `)    //player 2 for scoreboard
+    objectP1 = $("#numb2").val()                  //select user input for their choosen mark - player1 - store value for later use
+    objectP2 = $("#numb4").val()                  //select user input for their choosen mark - player2 - store value for later use
   };
 
-  quick = function (){
-    $("#player1Name").text(`Player 1 Score: `)
-    $("#player2Name").text(`Player 2 Score: `)
-    objectP1 = "X"
-    console.log(objectP1);
-    objectP2 = "O"
-
+quick = function (){                            //if 'quick game' button is clicked
+    $("#player1Name").text(`Player 1 Score: `)    //display text for scoreboard - with no user input
+    $("#player2Name").text(`Player 2 Score: `)    //display text for scoreboard - with no user input
+    objectP1 = "X"                                //default mark value - store for later use on board
+    objectP2 = "O"                                // ``
     };
 
-object = function () {
-  // $("#numb2").val()
-  console.log("clicked");
+resetPlayers = function (){     //reset the game board and the score - (reset players button)
+  location.reload();            //just reloads the page - clears all dom
 }
 
+let topL = $("#1text").click(function() { // if the Top Left Square is Clicked
+  $("#1text").addClass("animate bounceIn"); // click effect
+      if (clicks === 0 ) {  // 0 = player one turn
+        $("#1text").text(objectP1); // fill square will player1 marker
+        clicks++ // add 1 to click counter after placeing the player 1 marker - means next turn will be player 2
+        topL = 1 // assign numvber value to square top left  - used for checking winner
+        gameEnd(); // run the end game function - check for winner after placig each mark
+      }else { //if click counter is not 0 then it is player2 turn
+        $("#1text").text(objectP2); // place the player 2 mark in top Left square
+        clicks-- // subtract 1 after placing player2 mark - make next turn player 1
+        topL = 4 // assign value of 4 for a player 2 mark in top left
+        gameEnd(); // check for winner after placing player 2 mark
+      }
+    })
 
-//reset the game board and the score - (reset players button)
-resetPlayers = function (){
-  location.reload();
-}
-
-
-
-let topL = $("#1text").click(function() {
-  $("#1text").addClass("animate bounceIn");
-
-                  if (clicks === 0 ) {
-                    $("#1text").text(objectP1);
-                    clicks++
-                    topL = 1
-                    gameEnd();
-                  }else {
-                    $("#1text").text(objectP2);
-                    clicks--
-                    topL = 4
-                    gameEnd();
-                  }
-                })
-
-let topM = $("#2text").click(function() {
+let topM = $("#2text").click(function() {           // The top middle square of game board
   $("#2text").addClass("animate bounceIn");
+      if (clicks === 0 ) {
+        $("#2text").text(objectP1);
+        clicks++
+        topM = 1
+        gameEnd();
+      }else {
+        $("#2text").text(objectP2)
+        clicks--
+        topM = 4
+        gameEnd();
+      }
+    })
 
-                  if (clicks === 0 ) {
-                    $("#2text").text(objectP1);
-                    clicks++
-                    topM = 1
-                    gameEnd();
-                  }else {
-                    $("#2text").text(objectP2)
-                    clicks--
-                    topM = 4
-                    gameEnd();
-                  }
-                })
-
-let topR = $("#3text").click(function() {
+let topR = $("#3text").click(function() {           // The top right square of game board
   $("#3text").addClass("animate bounceIn");
+      if (clicks === 0 ) {
+        $("#3text").text(objectP1);
+        clicks++
+        topR = 1
+        gameEnd();
+      }else {
+        $("#3text").text(objectP2)
+        clicks--
+        topR = 4
+        gameEnd();
+      }
+    })
 
-                  if (clicks === 0 ) {
-                    $("#3text").text(objectP1);
-                    clicks++
-                    topR = 1
-                    gameEnd();
-                  }else {
-                    $("#3text").text(objectP2)
-                    clicks--
-                    topR = 4
-                    gameEnd();
-                  }
-                })
-
-let midL = $("#4text").click(function() {
+let midL = $("#4text").click(function() {           // The middle left square of game board
   $("#4text").addClass("animate bounceIn");
+      if (clicks === 0 ) {
+        $("#4text").text(objectP1);
+        clicks++
+        midL = 1
+        gameEnd();
+      }else {
+        $("#4text").text(objectP2)
+        clicks--
+        midL = 4
+        gameEnd();
+      }
+    })
 
-                  if (clicks === 0 ) {
-                    $("#4text").text(objectP1);
-                    clicks++
-                    midL = 1
-                    gameEnd();
-                  }else {
-                    $("#4text").text(objectP2)
-                    clicks--
-                    midL = 4
-                    gameEnd();
-                  }
-                })
-
-let midM = $("#5text").click(function() {
+let midM = $("#5text").click(function() {         // The middle middle square of game board
   $("#5text").addClass("animate bounceIn");
+      if (clicks === 0 ) {
+        $("#5text").text(objectP1);
+        clicks++
+        midM = 1
+        gameEnd();
+      }else {
+        $("#5text").text(objectP2)
+        clicks--
+        midM = 4
+        gameEnd();
+      }
+    })
 
-                  if (clicks === 0 ) {
-                    $("#5text").text(objectP1);
-                    clicks++
-                    midM = 1
-                    gameEnd();
-                  }else {
-                    $("#5text").text(objectP2)
-                    clicks--
-                    midM = 4
-                    gameEnd();
-                  }
-                })
-
-let midR = $("#6text").click(function() {
+let midR = $("#6text").click(function() {       // The middle Right square of game board
   $("#6text").addClass("animate bounceIn");
+      if (clicks === 0 ) {
+        $("#6text").text(objectP1);
+        clicks++
+        midR = 1
+        gameEnd();
+      }else {
+        $("#6text").text(objectP2)
+        clicks--
+        midR = 4
+        gameEnd();
+      }
+    })
 
-                  if (clicks === 0 ) {
-                    $("#6text").text(objectP1);
-                    clicks++
-                    midR = 1
-                    gameEnd();
-                  }else {
-                    $("#6text").text(objectP2)
-                    clicks--
-                    midR = 4
-                    gameEnd();
-                  }
-                })
-
-let bottomL = $("#7text").click(function() {
+let bottomL = $("#7text").click(function() {    // The bottom left square of game board
   $("#7text").addClass("animate bounceIn");
+    if (clicks === 0 ) {
+      $("#7text").text(objectP1);
+      clicks++
+      bottomL = 1
+      gameEnd();
+    }else {
+      $("#7text").text(objectP2)
+      clicks--
+      bottomL = 4
+      gameEnd();
+    }
+  })
 
-                  if (clicks === 0 ) {
-                    $("#7text").text(objectP1);
-                    clicks++
-                    bottomL = 1
-                    gameEnd();
-                  }else {
-                    $("#7text").text(objectP2)
-                    clicks--
-                    bottomL = 4
-                    gameEnd();
-                  }
-                })
-
-let bottomM = $("#8text").click(function() {
+let bottomM = $("#8text").click(function() {      // The bottom middle square of game board
   $("#8text").addClass("animate bounceIn");
+    if (clicks === 0 ) {
+      $("#8text").text(objectP1);
+      clicks++
+      bottomM = 1
+      gameEnd();
+    }else {
+      $("#8text").text(objectP2)
+      clicks--
+      bottomM = 4
+      gameEnd();
+    }
+  })
 
-                  if (clicks === 0 ) {
-                    $("#8text").text(objectP1);
-                    clicks++
-                    bottomM = 1
-                    gameEnd();
-                  }else {
-                    $("#8text").text(objectP2)
-                    clicks--
-                    bottomM = 4
-                    gameEnd();
-                  }
-                })
-
-let bottomR = $("#9text").click(function() {
+let bottomR = $("#9text").click(function() {      // The bottom right square of game board
   $("#9text").addClass("animate bounceIn");
+    if (clicks === 0 ) {
+      $("#9text").text(objectP1);
+      clicks++
+      bottomR = 1
+      gameEnd();
+    }else {
+      $("#9text").text(objectP2)
+      clicks--
+      bottomR = 4
+      gameEnd();
+    }
+  })
 
-                  if (clicks === 0 ) {
-                    $("#9text").text(objectP1);
-                    clicks++
-                    bottomR = 1
-                    gameEnd();
-                  }else {
-                    $("#9text").text(objectP2)
-                    clicks--
-                    bottomR = 4
-                    gameEnd();
-                  }
-                })
+let gameEnd = function () {  // find if their is a winner after each mark is place - run this function after each click
 
-let gameEnd = function () {
-  // Horizonal Wins - X
+    // Horizonal Wins options for player1 (X) - asigned values add to three
     if (+(topL) + +(topM) + +(topR) === 3 || +(midL) + +(midM) + +(midR) === 3 || +(bottomL) + +(bottomM) + +(bottomR) === 3) {
-      console.log("Player X has won");
-      winner = "X";
-      endMessage();
-      $("body").addClass("gameWinner");
-        if (+(topL) + +(topM) + +(topR) === 3) { // Change the X,O to Checks after they win
-          $("#1text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+      console.log("Player X has won");    //check for a sum of 3 in each of the three horizontal line - only checks for player 1 victory
+      winner = "X";                       //assin the winner to be X - store for later use
+      endMessage();                       // calling the function to display the winner message
+      $("body").addClass("gameWinner");   // change the background color after a win
+        if (+(topL) + +(topM) + +(topR) === 3) { // if the win invloved these 3 spaces - change to new font - only these squares
+          $("#1text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"}) //font awesome check mark for square topL (id class of #1text)
           $("#2text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
           $("#3text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
 
@@ -217,16 +192,15 @@ let gameEnd = function () {
           $("#9text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
 
         }else {
-
         }
 
-  // Horizonal Wins - O
+  // Horizonal Wins options for player2 (O) - asigned values add to 12 (each assinged a 4 after player2 click)
     }else if (+(topL) + +(topM) + +(topR) === 12 || +(midL) + +(midM) + +(midR) === 12 || +(bottomL) + +(bottomM) + +(bottomR) === 12){
       console.log("Player O has won");
       winner = "O";
       endMessage();
       $("body").addClass("gameWinner");
-        if (+(topL) + +(topM) + +(topR) === 12) { // Change the X,O to Checks after they win
+        if (+(topL) + +(topM) + +(topR) === 12) {
           $("#1text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
           $("#2text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
           $("#3text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
@@ -242,10 +216,9 @@ let gameEnd = function () {
           $("#9text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
 
         }else {
-
         }
 
-// Verticle Wins - X
+// Verticle Win options for player1 (X)
     }else if (+(topL) + +(midL) + +(bottomL) === 3 || +(topM) + +(midM) + +(bottomM) === 3 || +(topR) + +(midR) + +(bottomR) === 3) {
       console.log("Player X has won");
       winner = "X";
@@ -267,9 +240,9 @@ let gameEnd = function () {
           $("#9text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
 
         }else {
-
         }
-// Verticle Wins - O
+
+// Verticle Win options for player 2 (O)
     }else if (+(topL) + +(midL) + +(bottomL) === 12 || +(topM) + +(midM) + +(bottomM) === 12 || +(topR) + +(midR) + +(bottomR) === 12) {
       console.log("Player O has won");
       winner = "O";
@@ -291,7 +264,6 @@ let gameEnd = function () {
           $("#9text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
 
         }else {
-
         }
 
 // Across Wins - X
@@ -311,7 +283,6 @@ let gameEnd = function () {
           $("#7text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
 
         }else {
-
         }
 // Across Wins - O
     } else if (+(topL) + +(midM) + +(bottomR) === 12 || +(topR) + +(midM) + +(bottomL) === 12) {
@@ -330,35 +301,31 @@ let gameEnd = function () {
           $("#7text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
 
         }else {
-
-        }
+        };
 
 // Tie Game
 
       } else if (+(topL) + +(topM) + +(topR) + +(midL) + +(midM) + +(midR) + +(bottomL) + +(bottomM) + +(bottomR) === 21) {
-        console.log("Tie, Play again");
-        winner = "T"
-        $("body").addClass("gameTie");
-        endMessage()
-        console.log(winner);
-        }else {
-        console.log("keep Playing");
-        }
+          console.log("Tie, Play again");
+          winner = "T"
+          $("body").addClass("gameTie");
+          endMessage()
+          console.log(winner);
+      } else {
+          console.log("keep Playing");
+      };
+    };
 
-}
-
-// Display a message when the game is over
-  let xWin = 0
+  let xWin = 0 //Starting values for the score board
   let oWin = 0
 
-  let endMessage = function () {
+  let endMessage = function () {    //function for when a win has been found
         if (winner === "X") {
-          xWin++
-          $(".winner").text(`${name1} has won, click reset to play again`);
-          $(".box").removeClass("animated shake")
-          $("#scorePlayer1").text(xWin);
-          console.log(`wins = ${xWin}`);
-      } if (winner === "O") {
+          xWin++                    //Add 1 to the scoreboard for player1 (X)
+          $(".winner").text(`${name1} has won, click reset to play again`); //The message to be displayed on the bottom after a player1 win
+          $(".box").removeClass("animated shake")   // remove the shake animation so that i can be readded when the clear button is pushed - Does it need to be here?
+          $("#scorePlayer1").text(xWin);            // add the new score text for scoreboard
+      } if (winner === "O") {         // same for a player2 win
           oWin++
           $(".winner").text(`${name2} has won, click reset to play again`);
           $(".box").removeClass("animated shake")
@@ -367,15 +334,12 @@ let gameEnd = function () {
           $(".winner").text(`Tie Game, Play again`);
           $(".box").removeClass("animated shake")
       } else {
-
       }
-
   };
 
-// reset the game board - not the players - keep the score
-  let clear = $(".reset").click(function () {
-    $("#1text").removeClass("animate bounceIn fa fa-check-circle");
-    $("#2text").removeClass("animate bounceIn fa fa-check-circle");
+  let clear = $(".reset").click(function () {   // reset the game board - not the players - keep the score
+    $("#1text").removeClass("animate bounceIn fa fa-check-circle"); //Removes the animation and font class on thje clear
+    $("#2text").removeClass("animate bounceIn fa fa-check-circle"); //Done for each square individually - better Way?
     $("#3text").removeClass("animate bounceIn fa fa-check-circle");
     $("#4text").removeClass("animate bounceIn fa fa-check-circle");
     $("#5text").removeClass("animate bounceIn fa fa-check-circle");
@@ -384,7 +348,7 @@ let gameEnd = function () {
     $("#8text").removeClass("animate bounceIn fa fa-check-circle");
     $("#9text").removeClass("animate bounceIn fa fa-check-circle");
     $(".box").text("");
-    topL = 0
+    topL = 0  // reset the value in each square - so new round winner can be found
     topM = 0
     topR = 0
     midL = 0
@@ -393,15 +357,11 @@ let gameEnd = function () {
     bottomL = 0
     bottomM = 0
     bottomR = 0
-
-    clicks = 0
-    $(".winner").text("");
-    $("body").removeClass("gameWinner");
-    $("body").removeClass("gameTie");
-    $(".box").addClass("animated shake") // only works the first time - need to remove the class and re-add
-
+    clicks = 0 //reset the clicks so that player 1 starts first again - could leave and have players rotate lead? or winner goes first?
+    $(".winner").text(""); //reset the winner text box to blank
+    $("body").removeClass("gameWinner");  // rest background winning color
+    $("body").removeClass("gameTie");     // rest background tie color
+    $(".box").addClass("animated shake")  // only works the first time - need to remove the class and re-add nd have animiate for next round
   })
-
-
 
 }) // end of doc ready
