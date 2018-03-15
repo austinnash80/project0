@@ -36,13 +36,41 @@ button {
   border-radius: 5px;
   display: inline-block;
   font-size: 15px;
+  width: 125px;
 
 
 }
 
 .pickPlayer {
   margin: 0 auto;
-  padding-left: 119px;
+  padding-left: 100px;
+  padding-bottom: 10px;
+}
+
+input{
+  width: 125px;
+  padding: 0px;
+  padding-left: 10px;
+  padding-right: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+}
+
+.userInfo {
+  padding-left: 135px;
+}
+
+#numb1, #numb3{
+  width: 150px;
+  font-size: 20px;
+  font-family: 'Kalam', cursive;
+}
+#numb2, #numb4{
+  width: 20px;
+  font-size: 20px;
+  font-family: 'Kalam', cursive;
 }
 
 .box {
