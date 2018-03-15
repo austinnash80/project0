@@ -3,57 +3,8 @@ console.log("working?");
 $(document).ready(function(){
   console.log("ready")
 
-// New click counter for AI part
-// let clickCount = 0
-//
-//   $("#1text").click(function() {
-//     clickCount ++
-//     console.log(`clickCount1 = ${clickCount}`);
-//   });
-//
-// $("#2text").click(function() {
-//     clickCount ++
-//     console.log(`clickCount1 = ${clickCount}`);
-//   });
-//
-// $("#3text").click(function() {
-//     clickCount ++
-//     console.log(`clickCount1 = ${clickCount}`);
-//     });
-//
-// $("#4text").click(function() {
-//     clickCount ++
-//     console.log(`clickCount1 = ${clickCount}`);
-//       });
-//
-// $("#5text").click(function() {
-//     clickCount ++
-//     console.log(`clickCount1 = ${clickCount}`);
-//       });
-//
-// $("#6text").click(function() {
-//     clickCount ++
-//     console.log(`clickCount1 = ${clickCount}`);
-//       });
-//
-// $("#7text").click(function() {
-//     clickCount ++
-//     console.log(`clickCount1 = ${clickCount}`);
-//       });
-//
-// $("#8text").click(function() {
-//     clickCount ++
-//     console.log(`clickCount1 = ${clickCount}`);
-//       });
-//
-// $("#9text").click(function() {
-//     clickCount ++
-//     console.log(`clickCount1 = ${clickCount}`);
-//       });
-//
-// console.log(`clickCount total = ${clickCount}`);
-//
 
+let clicks = 0;
 
 
 changePlayerX = function (){
@@ -84,131 +35,147 @@ resetPlayers = function (){
   location.reload();
 }
 
-let clicks = 0
-
 let topL = $("#1text").click(function() {
   $("#1text").addClass("animate bounceIn");
-  $("#1text").text(changePlayerX);
-  topL = 1
-  // console.log(topL)
-  gameEnd();
-  ai();
-  clicks ++
-  console.log(`topL clicks = ${clicks}`);
 
-})
-
+                  if (clicks === 0 ) {
+                    $("#1text").text(changePlayerX);
+                    clicks++
+                    topL = 1
+                    gameEnd();
+                  }else {
+                    $("#1text").text(changePlayerO);
+                    clicks--
+                    topL = 4
+                    gameEnd();
+                  }
+                })
 
 let topM = $("#2text").click(function() {
   $("#2text").addClass("animate bounceIn");
 
-                  if (clicks >= 0 ) {
+                  if (clicks === 0 ) {
                     $("#2text").text(changePlayerX);
+                    clicks++
                     topM = 1
                     gameEnd();
-                    ai();
-                    clicks ++
-                    console.log(`topM clicks ${clicks}`);
                   }else {
-
+                    $("#2text").text(changePlayerO)
+                    clicks--
+                    topM = 4
+                    gameEnd();
                   }
                 })
 
 let topR = $("#3text").click(function() {
   $("#3text").addClass("animate bounceIn");
 
-                  if (clicks >= 0 ) {
+                  if (clicks === 0 ) {
                     $("#3text").text(changePlayerX);
+                    clicks++
                     topR = 1
-                    ai();
                     gameEnd();
-                    clicks ++
-                    console.log(`topR clicks ${clicks}`);
                   }else {
+                    $("#3text").text(changePlayerO)
+                    clicks--
+                    topR = 4
+                    gameEnd();
                   }
                 })
 
 let midL = $("#4text").click(function() {
   $("#4text").addClass("animate bounceIn");
 
-                  if (clicks >= 0 ) {
+                  if (clicks === 0 ) {
                     $("#4text").text(changePlayerX);
+                    clicks++
                     midL = 1
-                    ai();
                     gameEnd();
-                    clicks ++
                   }else {
-
+                    $("#4text").text(changePlayerO)
+                    clicks--
+                    midL = 4
+                    gameEnd();
                   }
                 })
 
 let midM = $("#5text").click(function() {
   $("#5text").addClass("animate bounceIn");
 
-                  if (clicks >= 0 ) {
+                  if (clicks === 0 ) {
                     $("#5text").text(changePlayerX);
+                    clicks++
                     midM = 1
-                    ai();
                     gameEnd();
-                    clicks ++
                   }else {
-
+                    $("#5text").text(changePlayerO)
+                    clicks--
+                    midM = 4
+                    gameEnd();
                   }
                 })
 
 let midR = $("#6text").click(function() {
   $("#6text").addClass("animate bounceIn");
 
-                  if (clicks >= 0 ) {
+                  if (clicks === 0 ) {
                     $("#6text").text(changePlayerX);
+                    clicks++
                     midR = 1
-                    ai();
                     gameEnd();
-                    clicks ++
                   }else {
-
+                    $("#6text").text(changePlayerO)
+                    clicks--
+                    midR = 4
+                    gameEnd();
                   }
                 })
 
 let bottomL = $("#7text").click(function() {
   $("#7text").addClass("animate bounceIn");
 
-                  if (clicks >= 0 ) {
+                  if (clicks === 0 ) {
                     $("#7text").text(changePlayerX);
+                    clicks++
                     bottomL = 1
-                    ai();
                     gameEnd();
-                    clicks ++
                   }else {
-
+                    $("#7text").text(changePlayerO)
+                    clicks--
+                    bottomL = 4
+                    gameEnd();
                   }
                 })
 
 let bottomM = $("#8text").click(function() {
   $("#8text").addClass("animate bounceIn");
 
-                  if (clicks >= 0 ) {
+                  if (clicks === 0 ) {
                     $("#8text").text(changePlayerX);
+                    clicks++
                     bottomM = 1
-                    ai();
                     gameEnd();
-                    clicks ++
                   }else {
-
+                    $("#8text").text(changePlayerO)
+                    clicks--
+                    bottomM = 4
+                    gameEnd();
                   }
                 })
 
 let bottomR = $("#9text").click(function() {
   $("#9text").addClass("animate bounceIn");
 
-                  if (clicks >= 0 ) {
+                  if (clicks === 0 ) {
                     $("#9text").text(changePlayerX);
+                    clicks++
                     bottomR = 1
-                    ai();
                     gameEnd();
-                    clicks ++
                   }else {
-
+                    $("#9text").text(changePlayerO)
+                    clicks--
+                    bottomR = 4
+                    gameEnd();
                   }
                 })
 
@@ -376,7 +343,7 @@ let gameEnd = function () {
           $("#scorePlayer1").text(xWin);
       } if (winner === "O") {
           oWin++
-          $(".winner").text(`The computer has won, click reset to play again`);
+          $(".winner").text(`Player ${changePlayerO} has won, click reset to play again`);
           $(".box").removeClass("animated shake")
           $("#scorePlayer2").text(oWin);
       } if (winner === "T") {
@@ -417,119 +384,6 @@ let gameEnd = function () {
     $(".box").addClass("animated shake") // only works the first time - need to remove the class and re-add
 
   })
-
-
-
-// start of AI
-
-//if topL = "X" then comp play midM `0`
-
-// let turns = function () {
-//   if (+(topL) + +(topM) === 2) {
-//     return true
-//   }else {
-//
-//   }
-// }
-// console.log(turns);
-
-
-
-let ai = function () {
-  console.log(`logging ${clicks}`);
-// First move - if user goes midM -> computer goes TopL, otherwise computer goes midM
-  if (clicks === 0 && midM != 1) {
-      $("#5text").text("O")
-
-  }if (clicks === 0 && midM === 1) {
-      $("#1text").text("O")
-
-//Second Move - if user has topL with topM or midL - computer will stop (topR or bottomL)
-  }if (clicks === 1 && topL === 1 && topM === 1 || (clicks === 2 && topL === 1 && topM === 1)) {
-      $("#3text").text("O")
-
-  }if ((clicks === 1 && topL === 1 && midL === 1) || (clicks === 2 && topL === 1 && midL === 1)) {
-      $("#7text").text("O")
-
-//Second Move - if user has topR with topM or midR - computer will stop (topL or bottomR)
-  }if (clicks === 1 && topR === 1 && topM === 1 || (clicks === 2 && topR === 1 && topM === 1)) {
-        $("#1text").text("O")
-
-  }if ((clicks === 1 && topR === 1 && midR === 1) || (clicks === 2 && topR === 1 && midR === 1)) {
-        $("#9text").text("O")
-
-//Second Move - if user has bottomL with midL or bottomM - computer will stop (topL or bottomR)
-  }if (clicks === 1 && bottomL === 1 && midL === 1 || (clicks === 2 && bottomL === 1 && midL === 1)) {
-        $("#1text").text("O")
-
-  }if ((clicks === 1 && bottomL === 1 && bottomM === 1) || (clicks === 2 && bottomL === 1 && bottomM === 1)) {
-        $("#9text").text("O")
-
-//Second Move - if user has topL with bottomL or topR - computer will stop (midL or topM)
-  }if (clicks === 1 && topL === 1 && bottomL === 1 || (clicks === 2 && topL === 1 && bottomL === 1)) {
-        $("#4text").text("O")
-
-  }if ((clicks === 1 && topL === 1 && topR === 1) || (clicks === 2 && topL === 1 && topR === 1)) {
-        $("#2text").text("O")
-
-//Second Move - if user has topL with bottomR or topR with bottomL - computer will play (midL)
-  }if ((clicks === 1 && topL === 1 && bottomR === 1) || (clicks === 2 && topL === 1 && bottomR === 1)) {
-        $("#4text").text("O")
-
-  }if ((clicks === 1 && topR === 1 && bottomL === 1) || (clicks === 2 && topR === 1 && bottomL === 1)) {
-        $("#4text").text("O")
-
-
-//Second Move - if user has bottomR with topR or bottomL with bottomL - computer will play (bottomM or midR)
-  }if ((clicks === 1 && bottomR === 1 && bottomL === 1) || (clicks === 2 && bottomR === 1 && bottomL === 1)) {
-        $("#8text").text("O")
-
-  }if ((clicks === 1 && bottomR === 1 && topR === 1) || (clicks === 2 && bottomR === 1 && topR === 1)) {
-        $("#6text").text("O")
-
-//Second Move - if user has bottomR with bottomM or midR with bottomL - computer will play (bottomL or topR)
-  }if ((clicks === 1 && bottomR === 1 && bottomM === 1) || (clicks === 2 && bottomR === 1 && bottomM === 1)) {
-        $("#7text").text("O")
-
-  }if ((clicks === 1 && bottomR === 1 && midR === 1) || (clicks === 2 && bottomR === 1 && midR === 1)) {
-        $("#3text").text("O")
-
-   }else {
-    console.log("no Move");
-  }
-}
-
-  // if (clicks === 1) {
-  //   if (topM === 1) {
-  //     $("#1text").text("O")
-  //   }if (midL === 1){
-  //     $("#7text").text("O")
-  //   }
-  //   else {
-  //     $("#1text").text("O")
-  //   }
-  // }
-
-    // if (click = 1 && midM != 1){
-    //   $("#5text").text("O")
-    //
-    // } if (click = 1 && midM === 1){
-    //   $("#1text").text("O")
-    //   console.log(`1 clicks ${clicks}`);
-    //
-    // }
-    // if (click = 2 && topM === 1 ) {
-    //   $("#3text").text("O")
-    //   console.log(`ai click = ${clicks}`);
-    //
-    // }if (click = 2 && midL === 1 ) {
-    //   $("#7text").text("O")
-    //   console.log(`ai clicks = ${clicks}`);
-    //
-    // }if (click = 2 && topM != 1 && midL != 1) {
-    //   $("#3text").text("O")
-    //   console.log(`ai clicks = ${clicks}`);
-    // }
 
 
 

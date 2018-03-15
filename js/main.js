@@ -324,6 +324,7 @@ let gameEnd = function () {
         console.log("Tie, Play again");
         winner = "T"
         $("body").addClass("gameTie");
+        endMessage()
         console.log(winner);
         }else {
         console.log("keep Playing");

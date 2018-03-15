@@ -3,67 +3,12 @@ console.log("working?");
 $(document).ready(function(){
   console.log("ready")
 
-// New click counter for AI part
-// let clickCount = 0
-//
-//   $("#1text").click(function() {
-//     clickCount ++
-//     console.log(`clickCount1 = ${clickCount}`);
-//   });
-//
-// $("#2text").click(function() {
-//     clickCount ++
-//     console.log(`clickCount1 = ${clickCount}`);
-//   });
-//
-// $("#3text").click(function() {
-//     clickCount ++
-//     console.log(`clickCount1 = ${clickCount}`);
-//     });
-//
-// $("#4text").click(function() {
-//     clickCount ++
-//     console.log(`clickCount1 = ${clickCount}`);
-//       });
-//
-// $("#5text").click(function() {
-//     clickCount ++
-//     console.log(`clickCount1 = ${clickCount}`);
-//       });
-//
-// $("#6text").click(function() {
-//     clickCount ++
-//     console.log(`clickCount1 = ${clickCount}`);
-//       });
-//
-// $("#7text").click(function() {
-//     clickCount ++
-//     console.log(`clickCount1 = ${clickCount}`);
-//       });
-//
-// $("#8text").click(function() {
-//     clickCount ++
-//     console.log(`clickCount1 = ${clickCount}`);
-//       });
-//
-// $("#9text").click(function() {
-//     clickCount ++
-//     console.log(`clickCount1 = ${clickCount}`);
-//       });
-//
-// console.log(`clickCount total = ${clickCount}`);
-//
-
-
 
 changePlayerX = function (){
   let player = "X"
   let playerX = prompt ("Player 1: Select the first letter of your name", "Enter One Letter Only")
       if (playerX.length === 1) {
-        console.log(playerX);
         changePlayerX = playerX
-        console.log(changePlayerX);
-        console.log(playerX.length);
       }else {
         changePlayerX = "X"
       }
@@ -86,15 +31,15 @@ resetPlayers = function (){
 
 let clicks = 0
 
+
 let topL = $("#1text").click(function() {
   $("#1text").addClass("animate bounceIn");
   $("#1text").text(changePlayerX);
   topL = 1
-  // console.log(topL)
   gameEnd();
-  ai();
+  ai0();
+  ai1();
   clicks ++
-  console.log(`topL clicks = ${clicks}`);
 
 })
 
@@ -106,13 +51,15 @@ let topM = $("#2text").click(function() {
                     $("#2text").text(changePlayerX);
                     topM = 1
                     gameEnd();
-                    ai();
+                    ai0();
+                    ai1();
                     clicks ++
-                    console.log(`topM clicks ${clicks}`);
                   }else {
-
+                    topL = 4
                   }
                 })
+
+
 
 let topR = $("#3text").click(function() {
   $("#3text").addClass("animate bounceIn");
@@ -120,11 +67,12 @@ let topR = $("#3text").click(function() {
                   if (clicks >= 0 ) {
                     $("#3text").text(changePlayerX);
                     topR = 1
-                    ai();
+                    ai0();
+                    ai1();
                     gameEnd();
                     clicks ++
-                    console.log(`topR clicks ${clicks}`);
                   }else {
+                    topR = 4
                   }
                 })
 
@@ -134,11 +82,12 @@ let midL = $("#4text").click(function() {
                   if (clicks >= 0 ) {
                     $("#4text").text(changePlayerX);
                     midL = 1
-                    ai();
+                    ai0();
+                    ai1();
                     gameEnd();
                     clicks ++
                   }else {
-
+                    midL = 4
                   }
                 })
 
@@ -148,11 +97,12 @@ let midM = $("#5text").click(function() {
                   if (clicks >= 0 ) {
                     $("#5text").text(changePlayerX);
                     midM = 1
-                    ai();
+                    ai0();
+                    ai1();
                     gameEnd();
                     clicks ++
                   }else {
-
+                    midM = 4
                   }
                 })
 
@@ -162,25 +112,28 @@ let midR = $("#6text").click(function() {
                   if (clicks >= 0 ) {
                     $("#6text").text(changePlayerX);
                     midR = 1
-                    ai();
+                    ai0();
+                    ai1();
                     gameEnd();
                     clicks ++
                   }else {
-
+                    midR = 4
                   }
                 })
 
-let bottomL = $("#7text").click(function() {
+let bottomL = 0
+bottomL = $("#7text").click(function() {
   $("#7text").addClass("animate bounceIn");
 
                   if (clicks >= 0 ) {
                     $("#7text").text(changePlayerX);
                     bottomL = 1
-                    ai();
+                    ai0();
+                    ai1();
                     gameEnd();
                     clicks ++
                   }else {
-
+                    bottomL = 4
                   }
                 })
 
@@ -190,11 +143,12 @@ let bottomM = $("#8text").click(function() {
                   if (clicks >= 0 ) {
                     $("#8text").text(changePlayerX);
                     bottomM = 1
-                    ai();
+                    ai0();
+                    ai1();
                     gameEnd();
                     clicks ++
                   }else {
-
+                    bottom = 4
                   }
                 })
 
@@ -204,11 +158,12 @@ let bottomR = $("#9text").click(function() {
                   if (clicks >= 0 ) {
                     $("#9text").text(changePlayerX);
                     bottomR = 1
-                    ai();
+                    ai0();
+                    ai1();
                     gameEnd();
                     clicks ++
                   }else {
-
+                    bottomR = 4
                   }
                 })
 
@@ -418,118 +373,119 @@ let gameEnd = function () {
 
   })
 
+if ($("#7text").html() === ""){
+  console.log("yes");
+}else {
 
-
-// start of AI
-
-//if topL = "X" then comp play midM `0`
-
-// let turns = function () {
-//   if (+(topL) + +(topM) === 2) {
-//     return true
-//   }else {
-//
-//   }
-// }
-// console.log(turns);
-
-
-
-let ai = function () {
-  console.log(`logging ${clicks}`);
-// First move - if user goes midM -> computer goes TopL, otherwise computer goes midM
-  if (clicks === 0 && midM != 1) {
-      $("#5text").text("O")
-
-  }if (clicks === 0 && midM === 1) {
-      $("#1text").text("O")
-
-//Second Move - if user has topL with topM or midL - computer will stop (topR or bottomL)
-  }if (clicks === 1 && topL === 1 && topM === 1 || (clicks === 2 && topL === 1 && topM === 1)) {
-      $("#3text").text("O")
-
-  }if ((clicks === 1 && topL === 1 && midL === 1) || (clicks === 2 && topL === 1 && midL === 1)) {
-      $("#7text").text("O")
-
-//Second Move - if user has topR with topM or midR - computer will stop (topL or bottomR)
-  }if (clicks === 1 && topR === 1 && topM === 1 || (clicks === 2 && topR === 1 && topM === 1)) {
-        $("#1text").text("O")
-
-  }if ((clicks === 1 && topR === 1 && midR === 1) || (clicks === 2 && topR === 1 && midR === 1)) {
-        $("#9text").text("O")
-
-//Second Move - if user has bottomL with midL or bottomM - computer will stop (topL or bottomR)
-  }if (clicks === 1 && bottomL === 1 && midL === 1 || (clicks === 2 && bottomL === 1 && midL === 1)) {
-        $("#1text").text("O")
-
-  }if ((clicks === 1 && bottomL === 1 && bottomM === 1) || (clicks === 2 && bottomL === 1 && bottomM === 1)) {
-        $("#9text").text("O")
-
-//Second Move - if user has topL with bottomL or topR - computer will stop (midL or topM)
-  }if (clicks === 1 && topL === 1 && bottomL === 1 || (clicks === 2 && topL === 1 && bottomL === 1)) {
-        $("#4text").text("O")
-
-  }if ((clicks === 1 && topL === 1 && topR === 1) || (clicks === 2 && topL === 1 && topR === 1)) {
-        $("#2text").text("O")
-
-//Second Move - if user has topL with bottomR or topR with bottomL - computer will play (midL)
-  }if ((clicks === 1 && topL === 1 && bottomR === 1) || (clicks === 2 && topL === 1 && bottomR === 1)) {
-        $("#4text").text("O")
-
-  }if ((clicks === 1 && topR === 1 && bottomL === 1) || (clicks === 2 && topR === 1 && bottomL === 1)) {
-        $("#4text").text("O")
-
-
-//Second Move - if user has bottomR with topR or bottomL with bottomL - computer will play (bottomM or midR)
-  }if ((clicks === 1 && bottomR === 1 && bottomL === 1) || (clicks === 2 && bottomR === 1 && bottomL === 1)) {
-        $("#8text").text("O")
-
-  }if ((clicks === 1 && bottomR === 1 && topR === 1) || (clicks === 2 && bottomR === 1 && topR === 1)) {
-        $("#6text").text("O")
-
-//Second Move - if user has bottomR with bottomM or midR with bottomL - computer will play (bottomL or topR)
-  }if ((clicks === 1 && bottomR === 1 && bottomM === 1) || (clicks === 2 && bottomR === 1 && bottomM === 1)) {
-        $("#7text").text("O")
-
-  }if ((clicks === 1 && bottomR === 1 && midR === 1) || (clicks === 2 && bottomR === 1 && midR === 1)) {
-        $("#3text").text("O")
-
-   }else {
-    console.log("no Move");
-  }
 }
 
-  // if (clicks === 1) {
-  //   if (topM === 1) {
-  //     $("#1text").text("O")
-  //   }if (midL === 1){
-  //     $("#7text").text("O")
-  //   }
-  //   else {
-  //     $("#1text").text("O")
-  //   }
-  // }
+let ai0 = function () {
+// First move - if user goes midM -> computer goes TopL, otherwise computer goes midM
 
-    // if (click = 1 && midM != 1){
-    //   $("#5text").text("O")
-    //
-    // } if (click = 1 && midM === 1){
-    //   $("#1text").text("O")
-    //   console.log(`1 clicks ${clicks}`);
-    //
-    // }
-    // if (click = 2 && topM === 1 ) {
-    //   $("#3text").text("O")
-    //   console.log(`ai click = ${clicks}`);
-    //
-    // }if (click = 2 && midL === 1 ) {
-    //   $("#7text").text("O")
-    //   console.log(`ai clicks = ${clicks}`);
-    //
-    // }if (click = 2 && topM != 1 && midL != 1) {
-    //   $("#3text").text("O")
-    //   console.log(`ai clicks = ${clicks}`);
-    // }
+// topL
+  if (clicks = 1){
+    if (topL === 1){
+      $("#5text").text("O")
+      midM = 4
+      +clicks ++
+      console.log(`Click 1 = ${clicks}`);
+    }else {
+
+    }
+  };
+};
+
+
+// Start Click 1
+
+let ai1 = function () {
+  if (clicks === 2) {
+
+    if (topM === 1){
+        $("#3text").text("O")
+        +clicks ++
+        +clicks ++
+        topR = 4
+        // console.log(topR);
+        // console.log($("#7text").html());
+        console.log(`Click 2 = ${clicks}`);
+    }if (topR === 1){
+      $("#2text").text("O")
+      +clicks ++
+      +clicks ++
+      topM = 4
+
+    }if (midL === 1){
+      $("#7text").text("O")
+      +clicks ++
+      +clicks ++
+      bottomL = 4
+
+      //can skip midm - will be O first move
+    }if (midR === 1){
+      $("#3text").text("O")
+      +clicks ++
+      +clicks ++
+      topR = 4
+
+    }if (bottomL === 1){
+      $("#4text").text("O")
+      +clicks ++
+      +clicks ++
+      midL = 4
+
+    }if (bottomM === 1){
+      $("#7text").text("O")
+      +clicks ++
+      +clicks ++
+      bottomL = 4
+
+    }if (bottomR === 1){
+      $("#3text").text("O")
+      +clicks ++
+      +clicks ++
+      topR = 4
+
+    }else {
+
+    }
+  }
+};
+
+// End Click 1
+
+// Start Clcik 2
+ // || clicks === 3 && topR === 1 || clicks === 3 && midL === 1 || clicks === 3 && midR === 1 || clicks === 3 && bottomL === 1 || clicks === 3 && bottomM === 1 || clicks === 3 && bottomR === 1
+// }if (clicks = 3 && midR === 1) {
+//     +clicks ++
+//     console.log(`Click 3 = ${clicks}`);
+//
+// }if (clicks = 3 && midL === 1) {
+//     +clicks ++
+//     console.log(`Click 3 = ${clicks}`);
+//
+// }if (clicks = 3 && bottomR === 1) {
+//       +clicks ++
+//       console.log(`Click 3 = ${clicks}`);
+//
+// }if (clicks = 3 && bottomM === 1) {
+//     +clicks ++
+//     console.log(`Click 3 = ${clicks}`);
+//
+// //Computer Wins 1
+// } if (clicks = 4 && topR === 4 && $("#7text").html() === ""){
+//       $("#7text").text("O")
+//       +clicks ++
+//       bottomL = 4
+//       // console.log(topR);
+//       // console.log($("#7text").html());
+//       console.log(`end click = ${clicks}`);
+//
+//
+//   } else {
+//
+//   }
+// };
 
 
 
