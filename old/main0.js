@@ -498,38 +498,38 @@ let ai = function () {
     console.log("no Move");
   }
 }
+ // not working 
+  if (clicks === 1) {
+    if (topM === 1) {
+      $("#1text").text("O")
+    }if (midL === 1){
+      $("#7text").text("O")
+    }
+    else {
+      $("#1text").text("O")
+    }
+  }
 
-  // if (clicks === 1) {
-  //   if (topM === 1) {
-  //     $("#1text").text("O")
-  //   }if (midL === 1){
-  //     $("#7text").text("O")
-  //   }
-  //   else {
-  //     $("#1text").text("O")
-  //   }
-  // }
+    if (click = 1 && midM != 1){
+      $("#5text").text("O")
 
-    // if (click = 1 && midM != 1){
-    //   $("#5text").text("O")
-    //
-    // } if (click = 1 && midM === 1){
-    //   $("#1text").text("O")
-    //   console.log(`1 clicks ${clicks}`);
-    //
-    // }
-    // if (click = 2 && topM === 1 ) {
-    //   $("#3text").text("O")
-    //   console.log(`ai click = ${clicks}`);
-    //
-    // }if (click = 2 && midL === 1 ) {
-    //   $("#7text").text("O")
-    //   console.log(`ai clicks = ${clicks}`);
-    //
-    // }if (click = 2 && topM != 1 && midL != 1) {
-    //   $("#3text").text("O")
-    //   console.log(`ai clicks = ${clicks}`);
-    // }
+    } if (click = 1 && midM === 1){
+      $("#1text").text("O")
+      console.log(`1 clicks ${clicks}`);
+
+    }
+    if (click = 2 && topM === 1 ) {
+      $("#3text").text("O")
+      console.log(`ai click = ${clicks}`);
+
+    }if (click = 2 && midL === 1 ) {
+      $("#7text").text("O")
+      console.log(`ai clicks = ${clicks}`);
+
+    }if (click = 2 && topM != 1 && midL != 1) {
+      $("#3text").text("O")
+      console.log(`ai clicks = ${clicks}`);
+    }
 
 
 
