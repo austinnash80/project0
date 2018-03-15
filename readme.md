@@ -1,31 +1,29 @@
-# Project 0
+# Tic Tac Toe Project 0
 
-## Subhead
+## Getting Started
 
-**Bold**
+#### Select custom or quick game
+If you decide to play a custom game, enter the names and symbol of choice for each player then select the 'Customer Play' button.
 
-*italic*
-## Lists
-* list item
-  * sub list
+If you do not want to enter player names select the 'quick play' game and you can begin with Player 1 using 'X' and Player 2 using 'O'.
 
-### ordered Lists
-1. list item
-1. list item
+#### Prerequisites
+Nothing needs to be installed or downloaded to play.
 
-![alt text] (url)
+## Code Details
 
-http://twitter.com
+#### Built With
+* HTML
+* CSS
+  * animate_css library
+  * font_awesome
+  * google_fonts
+* Java Script
+  * Jquery
 
-[twitter](http://twitter.com)
 
-> quotes
+#### Authors
+Austin Nash - GA student
 
-for html text `<h1>`
-
-```html
-<h1>
-<h2>
-```
-
-~~strikeout text~~
+#### License
+This project is licensed under the MIT License - see the LicenseMIT.md file for details

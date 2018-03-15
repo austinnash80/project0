@@ -1,0 +1,128 @@
+
+@import url('https://fonts.googleapis.com/css?family=Kalam:700');
+
+body {
+  background-color: #8A95A5;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+}
+
+.container {
+  max-width: 720px;
+  margin: auto;
+  background-color: #D0D6DB;
+  padding: 1em;
+  border-radius: 1em;
+  color: #36444F;
+
+}
+
+.gameWinner {
+  background-color: #B9C6AE;
+}
+
+.gameTie {
+  background-color: #DCBF85;
+}
+
+button {
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+  color: white;
+  background-color: blue;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 15px;
+  width: 125px;
+
+
+}
+
+.pickPlayer {
+  margin: 0 auto;
+  padding-left: 100px;
+  padding-bottom: 10px;
+}
+
+input{
+  width: 125px;
+  padding: 0px;
+  padding-left: 10px;
+  padding-right: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+}
+
+.userInfo {
+  padding-left: 135px;
+}
+
+#numb1, #numb3{
+  width: 150px;
+  font-size: 20px;
+  font-family: 'Kalam', cursive;
+}
+#numb2, #numb4{
+  width: 20px;
+  font-size: 20px;
+  font-family: 'Kalam', cursive;
+}
+
+.box {
+  border: 2px solid #000;
+  width: 75px;
+  height: 75px;
+  display:inline-block;
+  /* margin: 0em; */
+  line-height: 100px;
+/* position: static; */
+/* vertical-align: text-top; */
+  font-size: 55px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Kalam', cursive;
+  background-color: #8A95A5;
+
+}
+
+.score {
+  text-align: center;
+}
+
+h1 {
+  padding-left: 0px;
+  padding-top: 0px;
+  font-family: 'Kalam', cursive;
+  text-align: center;
+  font-size: 50px;
+}
+/* .xo {
+  text-align: center;
+  line-height: 35px;
+} */
+
+.box:hover {
+  background-color: #B9C6AE;
+  /* opacity: .05; */
+}
+
+
+.grid {
+
+  margin: 0 auto;
+  padding-top: 0px;
+  padding-left: 240px;
+}
+
+
+.winner {
+  margin-left: 5px;
+  text-align: center;
+}

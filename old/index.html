@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/jquery.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script type="text/javascript" src="js/main2.js">
+    <script type="text/javascript" src="js/main0.js">
 
     </script>
     <title>Project 0</title>
@@ -16,40 +16,15 @@
 
     <h1 class="">Tic Tac Toe - Project 0</h1>
       <div class="pickPlayer">
-        <button class="player1" id="customPlay" type="button" onclick="custom()" >Custom Play</button>
-        <button class="player2" type="button" onclick="quick()">Quick Play</button>
+        <button class="player1" type="button" onclick="changePlayerX()">Pick Player 1</button>
+        <button class="player2" type="button" onclick="changePlayerO()">Pick Player 2</button>
         <button class="reset" type="button">Reset Game</button>
         <button class="pageReload" onclick="resetPlayers()">Reset Players</button>
         <!-- <div class="pageReload" onclick="resetPlayers()">Click To Reset Players</div> -->
       </div>
-
-      <!-- <div class="pickPlayer start">
-        <button class="player1" type="button" onclick="changePlayerX()">Pick Player 1</button>
-        <button class="player2" type="button" onclick="changePlayerO()">Pick Player 2</button>
-        <input id="numb1">
-        <input id="numb2">
-      </div> -->
-      <div class="pickPlayer userInfo">
-        <input id="numb1" placeholder="Player 1: Name">
-        <input id="numb2" placeholder="X">
-        <input id="numb3" placeholder="Player 2: Name">
-        <input id="numb4" placeholder="O">
-      </div>
-
-      <!-- <div class="pickPlayer userInfo">
-        <input id="numb3">
-        <input id="numb4">
-      </div> -->
-
-
       <div class="score">
-        <h3>
-            <span id="player1Name"></span><span id="scorePlayer1"></span>
-        </h3>
-        <h3>
-            <span id="player2Name"></span><span id="scorePlayer2"> </span>
-        </h3>
-        <!-- <h3 id="player2Name"><span id="scorePlayer2"></span></h3> -->
+        <h3>Player 1 Score: <span id="scorePlayer1"></span>
+        <h3>Player 2 Score: <span id="scorePlayer2"></span>
       </div>
 
 
