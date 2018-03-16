@@ -230,39 +230,21 @@ $(document).ready(function() {
             $("body").addClass("gameWinner"); // change the background color after a win
             $(".box *").attr('disabled', true); // Not working - stop addtional clicks after a win
             if (+(topL) + +(topM) + +(topR) === 3) { // if the win invloved these 3 spaces - change to new font - only these squares
-                $("#1text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                }) //font awesome check mark for square topL (id class of #1text)
-                $("#2text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#3text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
+                $("#1text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"}) //font awesome check mark for square topL (id class of #1text)
+                $("#2text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#3text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
 
             }
             if (+(midL) + +(midM) + +(midR) === 3) {
-                $("#4text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#5text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#6text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
+                $("#4text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#5text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#6text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
 
             }
             if (+(bottomL) + +(bottomM) + +(bottomR) === 3) {
-                $("#7text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#8text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#9text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
+                $("#7text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#8text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#9text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
 
             } else {}
 
@@ -274,39 +256,21 @@ $(document).ready(function() {
             $("body").addClass("gameWinner");
             $(".box *").attr('disabled', true);
             if (+(topL) + +(topM) + +(topR) === 12) {
-                $("#1text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#2text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#3text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
+                $("#1text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#2text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#3text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
 
             }
             if (+(midL) + +(midM) + +(midR) === 12) {
-                $("#4text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#5text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#6text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
+                $("#4text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#5text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#6text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
 
             }
             if (+(bottomL) + +(bottomM) + +(bottomR) === 12) {
-                $("#7text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#8text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#9text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
+                $("#7text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#8text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#9text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
 
             } else {}
 
@@ -318,39 +282,21 @@ $(document).ready(function() {
             $("body").addClass("gameWinner");
             $(".box *").attr('disabled', true);
             if (+(topL) + +(midL) + +(bottomL) === 3) { // Change the X,O to Checks after they win
-                $("#1text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#4text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#7text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
+                $("#1text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#4text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#7text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
 
             }
             if (+(topM) + +(midM) + +(bottomM) === 3) {
-                $("#2text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#5text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#8text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
+                $("#2text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#5text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#8text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
 
             }
             if (+(topR) + +(midR) + +(bottomR) === 3) {
-                $("#3text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#6text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#9text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
+                $("#3text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#6text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#9text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
 
             } else {}
 
@@ -362,39 +308,21 @@ $(document).ready(function() {
             $("body").addClass("gameWinner");
             $(".box *").attr('disabled', true);
             if (+(topL) + +(midL) + +(bottomL) === 12) { // Change the X,O to Checks after they win
-                $("#1text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#4text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#7text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
+                $("#1text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#4text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#7text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
 
             }
             if (+(topM) + +(midM) + +(bottomM) === 12) {
-                $("#2text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#5text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#8text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
+                $("#2text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#5text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#8text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
 
             }
             if (+(topR) + +(midR) + +(bottomR) === 12) {
-                $("#3text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#6text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#9text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
+                $("#3text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#6text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#9text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
 
             } else {}
 
@@ -406,27 +334,15 @@ $(document).ready(function() {
             $("body").addClass("gameWinner");
             $(".box *").attr('disabled', true);
             if (+(topL) + +(midM) + +(bottomR) === 3) { // Change the X,O to Checks after they win
-                $("#1text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#5text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#9text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
+                $("#1text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#5text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#9text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
 
             }
             if (+(topR) + +(midM) + +(bottomL) === 3) {
-                $("#3text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#5text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#7text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
+                $("#3text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#5text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#7text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
 
             } else {}
             // Across Wins - O
@@ -437,27 +353,15 @@ $(document).ready(function() {
             $("body").addClass("gameWinner");
             $(".box *").attr('disabled', true);
             if (+(topL) + +(midM) + +(bottomR) === 12) { // Change the X,O to Checks after they win
-                $("#1text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#5text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#9text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
+                $("#1text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#5text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#9text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
 
             }
             if (+(topR) + +(midM) + +(bottomL) === 12) {
-                $("#3text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#5text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
-                $("#7text").text("").addClass("fa fa-check-circle").css({
-                    "font-size": "75px"
-                })
+                $("#3text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#5text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
+                $("#7text").text("").addClass("fa fa-check-circle").css({"font-size": "75px"})
 
             } else {};
 
@@ -480,7 +384,7 @@ $(document).ready(function() {
     let endMessage = function() { //function for when a win has been found
         if (winner === "X") {
             xWin++ //Add 1 to the scoreboard for player1 (X)
-            $(".winner").text(`${name1} has won, click reset to play again`); //The message to be displayed on the bottom after a player1 win
+            $(".winner").text(`${name1} Won, click reset to play again`); //The message to be displayed on the bottom after a player1 win
             $(".box").removeClass("animated shake") // remove the shake animation so that i can be readded when the clear button is pushed - Does it need to be here?
             $("#scorePlayer1").text(xWin); // add the new score text for scoreboard
             $(".box *").attr('disabled', true);
@@ -488,7 +392,7 @@ $(document).ready(function() {
         }
         if (winner === "O") { // same for a player2 win
             oWin++
-            $(".winner").text(`${name2} has won, click reset to play again`);
+            $(".winner").text(`${name2} Won, click reset to play again`);
             $(".box").removeClass("animated shake")
             $("#scorePlayer2").text(oWin);
         }
